@@ -5,8 +5,8 @@ public class AlgorithmDriver {
 	public static void main(String[] args) {
 	
 	AlgorithmDriver driver = new AlgorithmDriver(); 
-	//driver.startLinkedList();
-	driver.startBinaryTree();
+	driver.startLinkedList();
+	//driver.startBinaryTree();
 	}
 	
 	
@@ -25,6 +25,7 @@ public class AlgorithmDriver {
 	public void startLinkedList()
 	{
 		LinkedList list = new LinkedList(10); 
+		/*
 		list.addEnd("Hi");
 		list.addEnd("whatsup");
 		list.addEnd("Corey");
@@ -33,6 +34,25 @@ public class AlgorithmDriver {
 		
 		list.delete(1); // deletes at location 2; 
 		list.print(); 
+		*/
+		
+		LinkedList circular = new LinkedList(10); 
+		circular.circularAtEnd("Hi");
+		circular.circularAtEnd("whatsup");
+		circular.circularAtEnd("Corey");
+		circular.circularAtEnd("Foo");
+		//circular.printCircle(); 
+
+		circular.circularAtBeginning("Bar");
+	//	circular.printCircle(); 
+		//System.out.println("Size = " + circular.getSize());
+		
+	
+		LinkedList doubly = new LinkedList(10); 
+		doubly.doublyAdd("hell");
+		doubly.doublyAdd("whatsssssss");
+		doubly.doublyAdd("Algorithms");
+		doubly.printCircle(); 
 	}
 
 	

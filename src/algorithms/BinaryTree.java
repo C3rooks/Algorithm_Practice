@@ -20,7 +20,7 @@ public class BinaryTree extends BinaryNode implements Ilist{
 		root = null; 
 	}
 	
-
+// needs work 
 	public void print()
 	{
 		boolean condition = true;
@@ -46,7 +46,7 @@ public class BinaryTree extends BinaryNode implements Ilist{
 					right = right.getRight(); 
 				}
 				
-                if(left == null && right == null)
+                if(left.data == null && right.data == null)
                condition = false; 
 
 			}

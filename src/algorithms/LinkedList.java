@@ -12,6 +12,121 @@ public class LinkedList extends Node {
 		size = 0; 
 	}
 	
+	public void printCircle()
+	{
+		if(head == null) throw new IllegalArgumentException("Error list is empty");
+		Node current = head; 
+		System.out.print("[" + current.data + "]"); 
+		while(current.next != tail)
+		{
+			current = current.next; 
+		
+			if(current == null) break; 
+			
+				System.out.print("[" + current.data + "]"); 
+			
+		}
+		System.out.println("");
+	}
+	
+	
+	public void doublyAdd(Object data)
+	{
+		Node temp = new Node(data); 
+		Node current = head; 
+		if(head == null)
+		{
+			head = temp;
+			tail = null; 
+			size++;
+			return; 
+		}
+		while(current.next != null)
+		{
+			tail = current; 
+			current = current.next;
+		}
+		current.next = temp; 
+	}
+	
+	public void circularAtBeginning(Object data)
+	{
+		Node temp = new Node(data); 
+		Node current = head; 
+		Node previous = null; 
+		if(head == null)
+			{
+			head = temp; 
+			tail = head; 
+			}else{
+				// 1 .next = 1, add 2, 2 = head 2.next = 1, 1 .next = head 
+				
+				previous = head; 
+				head = temp; 
+		
+				current = head; 
+				current.next = previous; 
+
+				while(current.next != null)
+				{
+					
+					current = current.next;
+					
+					if(current.next == tail){
+						break; 
+					}
+				
+				}
+				current.next = head; 
+				tail = head;
+
+			}
+		size++; 
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public void circularAtEnd(Object data)
+	{
+		Node current = head; 
+		Node temp = new Node(data); 
+		if(head == null){
+			head = temp; 
+			tail = head; 
+		}else{
+		while(current.next != tail)
+			{
+			if(current.next == null)
+				break; 
+				
+			current = current.next; 
+
+			}
+			current.next = temp;
+			temp.next = tail; 
+			tail = head; 
+		}
+			size++; 
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public void addEnd(Object data)
 	{	Node temp = new Node(data); 
 		Node current = head;
