@@ -1,16 +1,41 @@
 package algorithms;
 
+import sorting.InsertionSort;
+
 public class LinkedList extends Node {
 	
 	Node head; 
 	int size; 
-	
+
 	
 	LinkedList(int size)
 	{
 		head = null; 
 		size = 0; 
 	}
+	
+	
+	public void checkIfCycle()
+	{
+		
+		System.out.println("Checking LinkedList Type");
+		System.out.println("--------------------------");
+		if(tail == null)
+		{
+			System.out.println("Not a circular list");
+		}
+		else{
+			System.out.println("Is a circular list");
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
+	
 	
 	public void printCircle()
 	{
@@ -120,8 +145,13 @@ public class LinkedList extends Node {
 	
 	
 	
-	
-	
+	// sorts the list in place. 
+	public void insertionSort(){
+		InsertionSort sort = new InsertionSort(this, head); 
+		System.out.println("Sorting list of size " + sort.getSize());
+		Node n = sort.linkedSort();
+		head = n; 
+	}
 	
 	
 	
@@ -194,10 +224,11 @@ public class LinkedList extends Node {
 		Node current = head;
 	
 		while(current != null){ 
-			System.out.print("[" +current.data + "]" + ""); 
+			System.out.print("[][" +current.data + "]" + "->"); 
 			current = current.next; 
 		
 		}
+		System.out.print("null");
 		System.out.println(" ");
 	}
 	

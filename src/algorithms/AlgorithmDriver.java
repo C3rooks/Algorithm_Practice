@@ -25,6 +25,16 @@ public class AlgorithmDriver {
 	public void startLinkedList()
 	{
 		LinkedList list = new LinkedList(10); 
+		
+		list.addEnd(1);
+		list.addEnd(10);
+		list.addEnd(4);
+		list.addEnd(8);
+		list.addEnd(12);
+		list.addEnd(9);
+		list.print(); 
+		list.insertionSort();
+		list.print();
 		/*
 		list.addEnd("Hi");
 		list.addEnd("whatsup");
@@ -33,8 +43,9 @@ public class AlgorithmDriver {
 		list.print(); 
 		
 		list.delete(1); // deletes at location 2; 
-		list.print(); 
-		*/
+		//list.print();
+		list.checkIfCycle();
+	
 		
 		LinkedList circular = new LinkedList(10); 
 		circular.circularAtEnd("Hi");
@@ -52,7 +63,10 @@ public class AlgorithmDriver {
 		doubly.doublyAdd("hell");
 		doubly.doublyAdd("whatsssssss");
 		doubly.doublyAdd("Algorithms");
-		doubly.printCircle(); 
+	//	doubly.printCircle(); 
+		//doubly.checkIfCycle();
+		  */ 
+		 
 	}
 
 	
