@@ -5,9 +5,47 @@ public class AlgorithmDriver {
 	public static void main(String[] args) {
 	
 	AlgorithmDriver driver = new AlgorithmDriver(); 
-	driver.startLinkedList();
-	//driver.startBinaryTree();
+	//driver.startLinkedList();
+	driver.startBinaryTree();
+//	driver.startStack();
+//	driver.startLinkedStack();
+	//driver.startQueue();
 	}
+	
+	public void startQueue()
+	{
+		Queue queue = new Queue(3,1); 
+		queue.enQueue(3);
+		queue.enQueue(2);
+		queue.enQueue(8);
+		System.out.println(queue.deQueue()); 
+		System.out.println(queue.deQueue()); 
+		System.out.println(queue.deQueue()); 
+
+	}
+	
+	public void startStack(){
+		Stack stack = new Stack(10);
+	
+		stack.push(42);
+		stack.push(9);
+		stack.push(15);
+		stack.getMin(); 
+		stack.getMax(); 
+	}
+	
+	public void startLinkedStack()
+	{
+		LinkedStack stack = new LinkedStack(); 
+		stack.push(1);
+		stack.push(2);
+		stack.push(3);
+		stack.pop();
+		stack.pop(); 
+		System.out.println("Returning item " + stack.pop());
+		System.out.println("The size is now " + stack.getSize()); 
+	}
+	
 	
 	
 	public void startBinaryTree()
@@ -17,7 +55,9 @@ public class AlgorithmDriver {
 		tree.add(8);
 		tree.add(12);
 	    tree.add(7);
-		tree.print(); 
+		//tree.preorder();
+	    //tree.postorder();
+	    tree.inorder();
 		
 	}
 	
