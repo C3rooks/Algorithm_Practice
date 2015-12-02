@@ -1,13 +1,40 @@
-package sorting;
 
-import algorithms.LinkedList;
-import algorithms.Node;
 
 public class InsertionSort {
 
 	public LinkedList list; 
 	public Node head; 
-	
+	int[] array; 
+
+	public InsertionSort(int [] array)
+	{
+		this.array = array;
+		sort(array); 
+	}
+
+	public void sort(int [] list)
+	{
+      for(int i = 0; i <= list.length -1; i++)
+      {
+      	for(int j = i+1; j <= list.length -1; j++)
+      	{
+      		if(list[i] > list[j])
+      		{
+
+      			int temp = list[i];
+      			list[i] = list[j]; 
+      			list[j] = temp; 
+      		}
+
+      	}
+      }
+	}
+
+	public int[] getList()
+	{
+
+		return array; 
+	}
 	public InsertionSort(LinkedList list, Node head)
 	{
 		this.list = list; 

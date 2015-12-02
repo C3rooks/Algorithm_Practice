@@ -1,6 +1,4 @@
-package algorithms;
 
-import sorting.InsertionSort;
 
 public class LinkedList extends Node {
 	
@@ -13,7 +11,34 @@ public class LinkedList extends Node {
 		head = null; 
 		size = 0; 
 	}
-	
+	LinkedList()
+	{
+		head = null; 
+		size = 0; 
+	}
+
+	public void reverse()
+	{
+		//Using 3 pointers for reversing LinkedList.
+           Node previous=null;
+           Node current=head;
+           Node nextNode=head;
+           
+           while(nextNode!=null){
+           		 // 2     
+                  nextNode=nextNode.next; //make nextNode point to next node.
+                  // 
+                  current.next=previous; //make current node's next point to previous node.
+                  previous = current;  //make previousNode point to currentNode.
+                  current=nextNode;   //make currentNode point to nextNode.
+           }
+           //by this stage of program all the nodes are pointing to previous nodes(which has helped us generating reverse of LinkedList.)
+           head=previous;  //now make first point to previous node(i.e. last node).
+           
+           System.out.println("LinkedList has been reversed successfully.");
+	}
+
+
 	
 	public void checkIfCycle()
 	{

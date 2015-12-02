@@ -1,4 +1,3 @@
-package algorithms;
 
 public interface IBinaryNode extends INode{
 

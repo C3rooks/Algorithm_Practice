@@ -1,6 +1,5 @@
-package algorithms;
 
-public class BinaryNode {
+public class BinaryNode extends Node {
 
 
 	
